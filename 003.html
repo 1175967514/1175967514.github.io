@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.15/"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        z-index: 0;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    html,
+    body {
+        height: 100%;
+        font-size: 15px;
+    }
+
+    #app {
+        height: 100%;
+        position: relative;
+    }
+
+    /* 页眉 */
+    #header {
+        height: 8%;
+        background-color: white;
+        border-bottom: goldenrod 2px solid;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        font-size: 1.5rem;
+        display: flex;
+        color: white;
+        font-weight: lighter;
+    }
+
+    #header>div:nth-of-type(1) {
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        padding-top: 10px;
+        background-image: linear-gradient(200deg, #0c0922, #255352, #34a587, #37ffbf);
+    }
+
+    #header>div:nth-of-type(2) {
+        border-top: goldenrod 2px solid;
+        width: 60%;
+        height: 100%;
+        text-align: center;
+        padding-top: 10px;
+        color: #0c0922;
+        font-size: 1.6rem;
+        word-spacing: 30px;
+        letter-spacing: 5px;
+        /* background-image: linear-gradient(200deg, #0c0922, #255352, #34a587, #37ffbf); */
+    }
+
+    #header>div:nth-of-type(3) {
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        padding-top: 10px;
+        background-image: linear-gradient(322deg, #0c0922, #255352, #34a587, #37ffbf);
+        cursor: pointer;
+    }
+    #header>div:nth-of-type(3):hover{
+        text-shadow: black 5px 5px 10px;
+        font-weight: bold;
+    }
+    /* 左中 */
+    #middle_left {
+        border-right: white 1px solid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 80%;
+        bottom: 0;
+        z-index: -1;
+        text-align: center;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: lighter;
+        background-image: linear-gradient(50deg, #0c0922, #255352, #34a587, #37ffbf);
+    }
+    #middle_left>div:nth-of-type(1){
+        width: 100%;
+        height: 8%;
+        background-color: #255352;
+    }
+    #middle_left>div:nth-of-type(2){
+        width: 100%;
+        height: 46%;
+        padding-top: 40%;
+        border-bottom: 1px white solid;
+    }
+    #middle_left>div:nth-of-type(3){
+        width: 100%;
+        height: 46%;
+        padding-top: 40%;
+    }
+    /* 右中 */
+    #middle_right {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+
+    }
+
+    /* 遮罩层 */
+    #mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(25deg, #0c0922, #255352, #34a587, #37ffbf);
+        z-index: 2;
+    }
+
+    #mask_1 {
+        height: 35%;
+        border-bottom: white 1px solid;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #mask_1>div:nth-of-type(1) {
+        margin-top: 6%;
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    #mask_1>div div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("http://ku.90sjimg.com/element_origin_min_pic/01/02/76/6256f4276b7fc97.jpg");
+        animation: font 5s linear infinite;
+    }
+
+    /* 首页字动画 */
+    @keyframes font {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    #mask_1>div:nth-of-type(2) {
+        background-color: brown;
+        text-align: center;
+        width: 20%;
+        height: 15%;
+        line-height: 40px;
+        clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%);
+    }
+
+    #mask_2 {
+        height: 65%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #mask_2>div {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        line-height: 200px;
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight:lighter;
+        color: white;
+        margin-top: 5%;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: teal 5px 5px 10px -2px;
+        cursor: pointer;
+    }
+
+    #mask_2>div:hover {
+        font-weight: bold;
+        color: whitesmoke;
+        text-shadow: black 5px 5px 10px;
+    }
+
+    .class1 {
+        animation: trans 1s;
+        animation-fill-mode: forwards;
+    }
+    .class2 {
+        animation: trans2 1s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes trans {
+        to {
+            transform: translateX(100%);
+        }
+    }
+    @keyframes trans2 {
+        0%{
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div id="mask">
+            <div id="mask_1">
+                <div>ArcGis_ <div></div>
+                </div>
+                <div>Click to enter the map</div>
+            </div>
+            <div id="mask_2">
+                <div id="mamap">Enter</div>
+            </div>
+        </div>
+        <div id="header">
+            <div>Map</div>
+            <div>This is a map application</div>
+            <div id="home">Back > Home</div>
+        </div>
+        <div id="middle_left">
+            <div></div>
+            <div>福建农林大学</div>
+            <div>空间信息与数字技术</div>
+        </div>
+        <div id="middle_right">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var mamap = document.getElementById("mamap");
+    mamap.addEventListener('click', function () {
+        var mask = document.getElementById("mask");
+        mask.className = "class1";
+    });
+    var home = document.getElementById("home");
+    home.addEventListener('click', function () {
+        var mask = document.getElementById("mask");
+        mask.className = "class2";
+    });
+</script>
+<!-- 地图 -->
+<script>
+    /* 底图 */
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Compass",
+        "esri/widgets/ScaleBar"
+    ], function (Map, MapView, Compass, ScaleBar) {
+
+        var map = new Map({
+            basemap: "topo-vector"
+        });
+
+        var view = new MapView({
+            container: "middle_right",
+            map: map,
+            center: [119.2384386100, 26.0828806300], // longitude, latitude
+            zoom: 13
+        });
+        /* 坐标信息 */
+        var coordsWidget = document.createElement("coordinate");
+        coordsWidget.id = "coordsWidget";
+        coordsWidget.className = "esri-widget esri-component";
+        coordsWidget.style.padding = "7px 15px 5px";
+        view.ui.add(coordsWidget, "bottom-right");
+        /* 获取坐标函数 */
+        function showCoordinates(pt) {
+            var coords = "Lat/Lon " + pt.latitude.toFixed(3) + " " + pt.longitude.toFixed(3) +
+                " | Scale 1:" + Math.round(view.scale * 1) / 1 +
+                " | Zoom " + view.zoom;
+            coordsWidget.innerHTML = coords;
+        }
+        /* 监听指针移动事件 */
+        view.watch("stationary", function (isStationary) {
+            showCoordinates(view.center);
+        });
+
+        view.on("pointer-move", function (evt) {
+            showCoordinates(view.toMap({ x: evt.x, y: evt.y }));
+        });
+        /* 指南针 */
+        var compass = new Compass({
+            view: view
+        });
+        view.ui.add(compass, "top-left");
+        /* 比例尺 */
+        var scaleBar = new ScaleBar({
+            view: view
+        });
+        view.ui.add(scaleBar, {
+            position: "bottom-left"
+        });
+    });
+
+
+</script>
