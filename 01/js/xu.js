@@ -156,7 +156,6 @@ require([
       graphicsLayer.add(polygonGraphic);
       
 });
-    window.onload = function () {
         //屏蔽键盘事件
         document.onkeydown = function () {
             var e = window.event || arguments[0];
@@ -178,4 +177,4 @@ require([
         document.oncontextmenu = function () {
             return false;
         }
-    }
+    
