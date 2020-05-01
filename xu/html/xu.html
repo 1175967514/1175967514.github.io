@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        document.onkeydown = function () {
+            var e = window.event || arguments[0];
+            //F12
+            if (e.keyCode == 123) {
+                return false;
+                //Ctrl+Shift+I
+            } else if ((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)) {
+                return false;
+                //Shift+F10
+            } else if ((e.shiftKey) && (e.keyCode == 121)) {
+                return false;
+                //Ctrl+U
+            } else if ((e.ctrlKey) && (e.keyCode == 85)) {
+                return false;
+            }
+        };
+        //屏蔽鼠标右键
+        document.oncontextmenu = function () {
+            return false;
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/xu.css">
+    <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.15/"></script>
+</head>
+
+<body>
+    <audio src="http://www.170mv.com/kw/antiserver.kuwo.cn/anti.s?rid=MUSIC_30364355&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3" autoplay></audio>
+    <div id="background">
+        <div id="maskbar">
+            <div><img src="../image/label.png"></div>
+        </div>
+        <div id="mask">
+            <div id="artical">
+                <div>
+                    This is my plan<br>
+                    to travel around the world<br>
+                    with Liu Siying when we are old。<br>
+                    <img src="../image/enter.png" id="enter">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主页 -->
+    <div id="header">
+        <div>俄罗斯·红场</div>
+        <div>美国·大峡谷</div>
+        <div>NBA湖人·斯台普斯中心</div>
+        <div>澳大利亚·达令港</div>
+        <div>印度·泰姬陵</div>
+    </div>
+    <div id="middle_right"></div>
+</body>
+
+</html>
+<script src="../js/xu.js"></script>
