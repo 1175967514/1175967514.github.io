@@ -23,8 +23,8 @@
         z-index: 10;
     }
     #maskbar{
-        width: 4rem;
-        height: 4rem;
+        width: 10rem;
+        height: 10rem;
         position: absolute;
         margin-top: auto;
         transform: translateX(-4rem);
@@ -38,8 +38,8 @@
         cursor: pointer;
     }
     #maskbar img{
-        width: 2rem;
-        height: 2rem;
+        width: 6rem;
+        height: 6rem;
         margin-left: auto;
         margin-right: auto;
     }
