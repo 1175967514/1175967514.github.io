@@ -41,7 +41,7 @@ require([
         container: "middle_right",
         map: map,
         center: [-118.265878,34.0433], // longitude, latitude
-        zoom: 3
+        zoom: 12
     });
     /* 坐标信息 */
     var coordsWidget = document.createElement("coordinate");
