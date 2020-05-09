@@ -46,7 +46,7 @@ var layer1 = new FeatureLayer({
         container: "middle_right",
         map: map,
         center: [-118.265878,34.0433], // longitude, latitude
-        zoom: 12
+        zoom: 9
     });
     //图例
     
