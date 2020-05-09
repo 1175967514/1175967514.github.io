@@ -31,10 +31,15 @@ require([
     "esri/widgets/ScaleBar",
     "esri/Graphic",
     "esri/layers/GraphicsLayer",
-], function (Map, MapView, Compass, ScaleBar,Graphic, GraphicsLayer) {
-
+    "esri/widgets/Legend",
+    "esri/layers/FeatureLayer"
+], function (Map, MapView, Compass, ScaleBar,Graphic, GraphicsLayer,Legend, FeatureLayer) {
+var layer1 = new FeatureLayer({
+    url: "http://www.arcgisonline.cn/server/rest/services/Hosted/0505%E5%85%A8%E7%90%83%E7%96%AB%E6%83%85%E4%BF%A1%E6%81%AF/FeatureServer"
+});
     var map = new Map({
-        basemap: "topo-vector"
+        basemap: "topo-vector",
+    layers: [layer1]
     });
 
     var view = new MapView({
@@ -43,6 +48,16 @@ require([
         center: [-118.265878,34.0433], // longitude, latitude
         zoom: 12
     });
+    //图例
+    
+  var legend = new Legend({
+    view: view,
+    layerInfos: [{
+        layer: layer1,
+        title: "全球疫情信息"
+    }]
+});
+    view.ui.add(legend, "top-right");
     /* 坐标信息 */
     var coordsWidget = document.createElement("coordinate");
     coordsWidget.id = "coordsWidget";
