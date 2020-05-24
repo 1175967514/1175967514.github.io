@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>牛牛计算器</title>
+  <title>牛牛计算器2.0</title>
 </head>
 <style>
   html,
@@ -34,7 +34,7 @@
   }
 </style>
 
-<body >
+<body>
   <table align="center">
     <tr>
       <td class="td_orange" colspan="5" id="content"></td>
@@ -75,28 +75,70 @@
 
 </html>
 <script>
+  var array = [];
+  var i = 0;
   function appContent(td) {
+
     //找到显示字符串等式的td标签
     var content = document.getElementById("content");
     //找到显示结果的td标签
     var result = document.getElementById("result");
     //获取字符串的等式
     var text = td.innerText;
+
+    if (text != "del" && text != "c" ) {
+      array[i] = text;
+      i++;
+    }
+
+
     //如果是删除键
     if ("del" == text) {
       if (content.innerText.length > 0) {
         //删除最后一个字符
         content.innerText = content.innerText.substring(0, content.innerText.length - 1);
+
+        i--;
+        array.length = i;
+
       }
       //如果是全部删除
     } else if ("c" == text) {
       content.innerText = "";
+
+
+      array.length = 0;
+      i = 0;
       //如果是按了等于号
     } else if ("=" == text) {
       var resultText = parse(content.innerText);
-      result.innerText = content.innerText + "=" + resultText;
-      content.innerText = "";
+
+
+      console.log(array);
       //除了上面三种情况,其他的都是尾加
+
+      for (let j = 0; j < array.length; j++) {
+        if (array[0]=="+"||array[0]=="-"||array[0]=="*"||array[0]=="/"||array[0]=="="||array[0]=="."||array[0]==")") {
+          result.innerText = "输入错误";
+            console.log("输入错误");
+            return;
+        }else{
+        if (array[j] == "+" || array[j] == "-" || array[j] == "*" || array[j] == "/") {
+          if (array[j + 1] == "+" || array[j + 1] == "-" || array[j + 1] == "*" || array[j + 1] == "/"||array[j + 1] == "=") {
+            result.innerText = "输入错误";
+            console.log("输入错误");
+            return;
+          } else {
+
+            result.innerText = content.innerText + "=" + resultText;
+            content.innerText = "";
+            array.length = 0;
+            i = 0;
+            console.log("输入错误2");
+          }
+        }
+      }
+      }
     } else {
       content.innerText = content.innerText + text;
     }
@@ -141,4 +183,5 @@
       return content - 1 + 1;
     }
   }
+
 </script>
