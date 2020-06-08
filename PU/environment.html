@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>校园环境</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        *,
+        *:after,
+        *:before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            -o-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            background: #e16461;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        .wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .logo-img {
+            max-width: 95%;
+        }
+
+        /* SuperBox*/
+        .superbox-list {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            width: 12.5%;
+        }
+
+        .superbox-img {
+            max-width: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .superbox-show {
+            text-align: center;
+            position: relative;
+            background: #333;
+            box-shadow: inset 0 1px 5px #111;
+            -webkit-box-shadow: inset 0 1px 5px #111;
+            -moz-box-shadow: inset 0 1px 5px #111;
+            width: 100%;
+            float: left;
+            padding: 25px 0;
+            display: none;
+        }
+
+        .superbox-current-img {
+            max-width: 100%;
+            box-shadow: 0 1px 4px #222;
+            border: 1px solid #222;
+        }
+
+        .superbox-img:hover {
+            opacity: 0.8;
+        }
+
+        .superbox-float {
+            float: left;
+        }
+
+        .superbox-close {
+            opacity: 0.7;
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: url(http://demo.lanrenzhijia.com/2014/album1030/images/close.png) no-repeat center center;
+            width: 35px;
+            height: 35px;
+            z-index: 999;
+        }
+
+        .superbox-close:hover {
+            opacity: 1;
+        }
+
+        @media only screen and (min-width: 320px) {
+            .superbox-list {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (min-width: 486px) {
+            .superbox-list {
+                width: 25%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .superbox-list {
+                width: 16.66666667%;
+            }
+        }
+
+        @media only screen and (min-width: 1025px) {
+            .superbox-list {
+                width: 12.5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 代码部分begin -->
+    <div class="wrapper">
+        <!-- SuperBox -->
+        <div class="superbox">
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/p/20131106/20131106105314-314246393.jpg"
+                    data-img="http://pic.baike.soso.com/p/20131106/20131106105314-314246393.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="https://imgs.aiyangedu.com/A19/16/ayedu_25b600278e611b794876e186abfb227e_191661955.jpg"
+                    data-img="https://imgs.aiyangedu.com/A19/16/ayedu_25b600278e611b794876e186abfb227e_191661955.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://img1.fjtv.net/material/news/img/640x/2018/03/20180323143957I8OG.jpg?b5Ix"
+                    data-img="http://img1.fjtv.net/material/news/img/640x/2018/03/20180323143957I8OG.jpg?b5Ix" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://img.mp.sohu.com/upload/20170531/04cf4c17408c43afb0b3fec039051c73_th.png"
+                    data-img="http://img.mp.sohu.com/upload/20170531/04cf4c17408c43afb0b3fec039051c73_th.png" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://www.mba58.com/uploads/181205/1-1Q205103421522.jpg"
+                    data-img="http://www.mba58.com/uploads/181205/1-1Q205103421522.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://gaoduanjob.com/FYUP/image/image/20181018/20181018183126_10986.jpg"
+                    data-img="http://gaoduanjob.com/FYUP/image/image/20181018/20181018183126_10986.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://zt.gaoxiaojob.com/fjnldx1603.jpg"
+                    data-img="http://zt.gaoxiaojob.com/fjnldx1603.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://5b0988e595225.cdn.sohucs.com/images/20180105/7d275518d21445cab15c21bbc638606f.jpeg"
+                    data-img="http://5b0988e595225.cdn.sohucs.com/images/20180105/7d275518d21445cab15c21bbc638606f.jpeg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://img.mp.sohu.com/upload/20170629/f8aae52240ca43b5a39bd6748d798ad2_th.png"
+                    data-img="http://img.mp.sohu.com/upload/20170629/f8aae52240ca43b5a39bd6748d798ad2_th.png" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://img.mp.itc.cn/upload/20170325/ddf471e2369c4d3bb8dcf11471be8ab5_th.jpeg"
+                    data-img="http://img.mp.itc.cn/upload/20170325/ddf471e2369c4d3bb8dcf11471be8ab5_th.jpeg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://youimg1.c-ctrip.com/target/fd/tg/g2/M05/01/CE/Cghzf1UWBuyAIgbRAAJzFb09tG8032.jpg"
+                    data-img="http://youimg1.c-ctrip.com/target/fd/tg/g2/M05/01/CE/Cghzf1UWBuyAIgbRAAJzFb09tG8032.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic8.nipic.com/20100728/2947067_082747086841_2.jpg"
+                    data-img="http://pic8.nipic.com/20100728/2947067_082747086841_2.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic7.nipic.com/20100612/2947067_191014087003_2.jpg"
+                    data-img="http://pic7.nipic.com/20100612/2947067_191014087003_2.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/pqpic/baikepic/19218/cut-20131025161445-639773310.jpg/0"
+                    data-img="http://pic.baike.soso.com/pqpic/baikepic/19218/cut-20131025161445-639773310.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://img1.gtimg.com/fj/pics/hv1/174/198/873/56817489.jpg"
+                    data-img="http://img1.gtimg.com/fj/pics/hv1/174/198/873/56817489.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/pqpic/baikepic/25449/cut-20131106110011-119054774.jpg/0"
+                    data-img="http://pic.baike.soso.com/pqpic/baikepic/25449/cut-20131106110011-119054774.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="https://pic.baike.soso.com/pqpic/baikepic/22195/cut-20131106110139-740205046.jpg/0"
+                    data-img="https://pic.baike.soso.com/pqpic/baikepic/22195/cut-20131106110139-740205046.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/pqpic/baikepic/14704/cut-20131106110615-534644289.jpg/0"
+                    data-img="http://pic.baike.soso.com/pqpic/baikepic/14704/cut-20131106110615-534644289.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic8.nipic.com/20100728/2947067_083013029429_2.jpg"
+                    data-img="http://pic8.nipic.com/20100728/2947067_083013029429_2.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/pqpic/baikepic/12832/cut-20131106111117-28361979.jpg/0"
+                    data-img="http://pic.baike.soso.com/pqpic/baikepic/12832/cut-20131106111117-28361979.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic.baike.soso.com/pqpic/baikepic/28043/cut-20131106111351-1680998824.jpg/0"
+                    data-img="http://pic.baike.soso.com/pqpic/baikepic/28043/cut-20131106111351-1680998824.jpg/0" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic80.nipic.com/file/20151016/2014486_124156682000_2.jpg"
+                    data-img="http://pic80.nipic.com/file/20151016/2014486_124156682000_2.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://p3.pstatp.com/large/8446/4693389761"
+                    data-img="http://p3.pstatp.com/large/8446/4693389761" alt=""
+                    class="superbox-img">
+            </div>
+            <!--
+        -->
+            <div class="superbox-list">
+                <img src="http://pic8.nipic.com/20100727/2947067_083957048669_2.jpg"
+                    data-img="http://pic8.nipic.com/20100727/2947067_083957048669_2.jpg" alt=""
+                    class="superbox-img">
+            </div>
+            <div class="superbox-float"></div>
+        </div>
+        <!-- /SuperBox -->
+        <div style="height:300px;"></div>
+    </div>
+    <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+    <script>
+        ; (function ($) {
+            $.fn.SuperBox = function (options) {
+                var superbox = $('<div class="superbox-show"></div>');
+                var superboximg = $('<img src="" class="superbox-current-img">');
+                var superboxclose = $('<div class="superbox-close"></div>');
+                console.log("\u767e\u5ea6\u641c\u7d22\u3010\u7d20\u6750\u5bb6\u56ed\u3011\u4e0b\u8f7d\u66f4\u591aJS\u7279\u6548\u4ee3\u7801");
+                superbox.append(superboximg).append(superboxclose);
+                return this.each(function () {
+                    $('.superbox-list').click(function () {
+                        var currentimg = $(this).find('.superbox-img');
+                        var imgData = currentimg.data('img');
+                        superboximg.attr('src', imgData);
+
+                        if ($('.superbox-current-img').css('opacity') == 0) {
+                            $('.superbox-current-img').animate({ opacity: 1 });
+                        }
+
+                        if ($(this).next().hasClass('superbox-show')) {
+                            superbox.toggle();
+                        } else {
+                            superbox.insertAfter(this).css('display', 'block');
+                        }
+                        $('html, body').animate({
+                            scrollTop: superbox.position().top - currentimg.width()
+                        }, 'medium');
+                    });
+                    $('.superbox-close').live('click', function () {
+                        $('.superbox-current-img').animate({ opacity: 0 }, 200, function () {
+                            $('.superbox-show').slideUp();
+                        });
+                    });
+                });
+            };
+        })(jQuery);
+        $(function () {
+            $('.superbox').SuperBox();
+        });
+    </script>
+    <!-- 代码部分end -->
+</body>
+
+</html>
